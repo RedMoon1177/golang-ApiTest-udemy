@@ -1,0 +1,78 @@
+package sort
+
+import (
+	"testing"
+)
+
+func TestBubbleSortASC(t *testing.T) {
+
+	// Init
+	elements := []int{9, 7, 5, 3, 1, 2, 4, 6, 8, 0}
+
+	// fmt.Println(elements)
+	// Execution
+	BubbleSort(elements)
+
+	// Validation
+	if elements[0] != 0 {
+		t.Error("first element should be 0")
+	}
+
+	if elements[len(elements)-1] != 9 {
+		t.Error("last element should be 9")
+	}
+
+	// fmt.Println(elements)
+
+}
+
+func TestSortASC(t *testing.T) {
+
+	// Init
+	elements := []int{7, 9, 5, 3, 1, 0, 4, 6, 2, 8}
+
+	// fmt.Println(elements)
+	// Execution
+	Sort(elements)
+
+	// Validation
+	if elements[0] != 0 {
+		t.Error("first element should be 0")
+	}
+
+	if elements[len(elements)-1] != 9 {
+		t.Error("last element should be 9")
+	}
+
+	// fmt.Println(elements)
+
+}
+
+// the test below to check coverage
+// func TestBubbleSortAlreadySorted(t *testing.T) {
+// 	// Init
+// 	elements := []int{5, 3, 2, 1}
+
+// 	// Execution
+// 	BubbleSort(elements)
+// }
+
+// test the performance of Sort() and BubbleSort()
+func BenchmarkBubbleSort(b *testing.B) {
+	// elements := []int{7, 9, 5, 3, 1, 0, 4, 6, 2, 8}
+
+	elements := GetElements(100000)
+
+	for i := 0; i < b.N; i++ {
+		BubbleSort(elements)
+	}
+}
+
+func BenchmarkSort(b *testing.B) {
+	// elements := []int{7, 9, 5, 3, 1, 0, 4, 6, 2, 8}
+	elements := GetElements(100000)
+
+	for i := 0; i < b.N; i++ {
+		Sort(elements)
+	}
+}
