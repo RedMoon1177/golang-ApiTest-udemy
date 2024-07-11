@@ -1,3 +1,4 @@
+### Section 3: Testing REST API Integrations
 https://github.com/federicoleon/golang-restclient
 
 https://api.mercadolibre.com/countries/AR
@@ -16,3 +17,8 @@ When the mockup server is running, it intercepts all HTTP requests made using th
 
 **Tools**
 https://codebeautify.org/jsonminifier (reformat json into a string for testing http response)
+
+
+### Section 4: Testing the whole app
+#### Gin-gonic
+https://github.com/gin-gonic/gin

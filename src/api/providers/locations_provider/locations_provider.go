@@ -15,6 +15,7 @@ const (
 )
 
 func GetCountry(countryId string) (*locations.Country, *errors.ApiError) {
+	fmt.Println("inside provider")
 
 	response := rest.Get(fmt.Sprintf(urlGetCountry, countryId))
 
