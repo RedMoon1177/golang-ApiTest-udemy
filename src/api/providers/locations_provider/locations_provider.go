@@ -15,10 +15,10 @@ const (
 )
 
 func GetCountry(countryId string) (*locations.Country, *errors.ApiError) {
-	fmt.Println("inside provider")
-
+	fmt.Println(urlGetCountry, countryId)
 	response := rest.Get(fmt.Sprintf(urlGetCountry, countryId))
 
+	fmt.Println(fmt.Sprintf("Obtained status code: %d", response.StatusCode))
 	if response == nil || response.Response == nil {
 		return nil, &errors.ApiError{
 			Status:  http.StatusInternalServerError,

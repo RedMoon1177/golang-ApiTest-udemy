@@ -9,7 +9,8 @@ var (
 func StartApp() {
 	mapUrls()
 
-	if err := router.Run(":8080"); err != nil {
+	// router from gin helps to run the app at port 8080 (client side)
+	if err := router.Run(":8081"); err != nil {
 		panic(err)
 	}
 }
